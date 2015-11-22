@@ -39,4 +39,4 @@ do
     ln -snfv "$DOTPATH/$f" "$HOME/$f"
 done
 
-# sudo apt-get install -y git zsh vim tmux
+# sudo apt-get install -y git zsh vim tmux ctags curl
