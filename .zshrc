@@ -1,5 +1,6 @@
 # environment
 export LANG=ja_JP.UTF-8
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # binding
 bindkey -v
@@ -8,7 +9,7 @@ bindkey -v
 setopt no_beep
 setopt auto_cd
 setopt auto_pushd
-setopt correct
+# setopt correct
 
 # colors
 autoload -Uz colors
