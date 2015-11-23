@@ -2,6 +2,7 @@
 export LANG=ja_JP.UTF-8
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/.gobrew/bin:$PATH
+eval "$(gobrew init -)"
 
 # binding
 bindkey -v
@@ -20,6 +21,10 @@ colors
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
 
 # prompt
 PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
@@ -59,12 +64,6 @@ setopt print_eight_bit
 setopt no_flow_control
 setopt interactive_comments
 setopt pushd_ignore_dups
-
-# history
-setopt share_history
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-setopt hist_reduce_blanks
 
 # glob
 setopt extended_glob
@@ -118,5 +117,3 @@ if [ -z $TMUX ]; then
   tmux -2 attach || tmux new-session \; source-file ~/.tmux/session
 fi
 
-export PATH="$HOME/.gobrew/bin:$PATH"
-eval "$(gobrew init -)"
