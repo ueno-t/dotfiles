@@ -6,7 +6,7 @@ set nocompatible
 set number
 set ruler
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 set laststatus=2
 set cmdheight=2
 set showmatch
@@ -38,16 +38,14 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set autoindent
-set smartindent
+" set autoindent
+" set smartindent
 
 " os setting
 " set iminsert=2
 
 " command line
 set history=2000
-
-colorscheme desert
 
 " neobundle
 set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -58,9 +56,23 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
+  " base
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Shougo/vimfiler'
 
+  " color schema
+  NeoBundle 'ujihisa/unite-colorscheme'
+  NeoBundle 'altercation/vim-colors-solarized'
+  NeoBundle 'w0ng/vim-hybrid'
+
 call neobundle#end()
 
+NeoBundleCheck
+
 filetype plugin indent on
+
+" color scheme
+set background=dark
+" colorscheme desert
+colorscheme solarized
+
