@@ -60,6 +60,9 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Shougo/vimfiler'
 
+  "
+  NeoBundle 'itchyny/lightline.vim'
+
   " color schema
   NeoBundle 'ujihisa/unite-colorscheme'
   NeoBundle 'altercation/vim-colors-solarized'
