@@ -2,28 +2,6 @@
 
 DOTPATH=~/.dotfiles
 
-# git
-if has "git"; then
-    git clone --recursive "$GITHUB_URL" "$DOTPATH"
-
-# or curl, wget
-elif has "curl" || has "wget"; then
-    tarball="https://github.com/b4b4r07/dotfiles/archive/master.tar.gz"
-
-    if has "curl"; then
-        curl -L "$tarball"
-
-    elif has "wget"; then
-        wget -O - "$tarball"
-
-    fi | tar xv -
-
-    mv -f dotfiles-master "$DOTPATH"
-
-else
-    die "curl or wget required"
-fi
-
 cd ~/.dotfiles
 if [ $? -ne 0 ]; then
     die "not found: $DOTPATH"
@@ -39,8 +17,6 @@ done
 # base
 sudo apt-get install -y git zsh vim tmux ctags curl
 sudo apt-get install -y make binutils bison gcc build-essential
-
-zsh
 
 # vim neobundle
 mkdir -p ~/.vim/bundle
@@ -61,14 +37,14 @@ sudo apt-get install -y stack
 
 # node nodebrew
 curl -L git.io/nodebrew | perl - setup
-echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> .zshrc
-source .zshrc
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 nodebrew install-binary stable
 nodebrew use stable
 
 # golang gobrew
 curl -L https://raw.github.com/grobins2/gobrew/master/tools/install.sh | sh
-source .zshrc
+export PATH=$HOME/.gobrew/bin:$PATH
+eval "$(gobrew init -)"
 gobrew install 1.5.1
 gobrew use 1.5.1
 
