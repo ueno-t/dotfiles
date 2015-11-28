@@ -9,7 +9,7 @@ if has "git"; then
 # or curl, wget
 elif has "curl" || has "wget"; then
     tarball="https://github.com/b4b4r07/dotfiles/archive/master.tar.gz"
-    
+
     if has "curl"; then
         curl -L "$tarball"
 
@@ -17,7 +17,7 @@ elif has "curl" || has "wget"; then
         wget -O - "$tarball"
 
     fi | tar xv -
-    
+
     mv -f dotfiles-master "$DOTPATH"
 
 else
@@ -40,17 +40,18 @@ done
 sudo apt-get install -y git zsh vim tmux ctags curl
 sudo apt-get install -y make binutils bison gcc build-essential
 
+zsh
+
+# vim neobundle
+mkdir -p ~/.vim/bundle
+git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
 # docker-engine
 sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572c52609d
 echo 'deb https://apt.dockerproject.org/repo debian-jessie main' |sudo tee /etc/apt/sources.list.d/docker.list
 sudo apt-get install apt-transport-https
-apt-cache policy docker-engine
+sudo apt-get update
 sudo apt-get install -y docker-engine
-
-# node nodebrew
-curl -L git.io/nodebrew | perl - setup
-nodebrew install-binary stable
-nodebrew use stable
 
 # haskell stack
 echo 'deb http://download.fpcomplete.com/debian/jessie stable main'|sudo tee /etc/apt/sources.list.d/fpco.list
@@ -58,8 +59,16 @@ wget -q -O- https://s3.amazonaws.com/download.fpcomplete.com/debian/fpco.key | s
 sudo apt-get update
 sudo apt-get install -y stack
 
-# golang goberw
+# node nodebrew
+curl -L git.io/nodebrew | perl - setup
+echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> .zshrc
+source .zshrc
+nodebrew install-binary stable
+nodebrew use stable
+
+# golang gobrew
 curl -L https://raw.github.com/grobins2/gobrew/master/tools/install.sh | sh
+source .zshrc
 gobrew install 1.5.1
 gobrew use 1.5.1
 
