@@ -48,8 +48,6 @@ set softtabstop=2
 set history=2000
 
 " neobundle
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
