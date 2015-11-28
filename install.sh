@@ -20,7 +20,9 @@ sudo apt-get install -y make binutils bison gcc build-essential
 
 # vim neobundle
 mkdir -p ~/.vim/bundle
-git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+git submodule git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+git submodule init
+git submodule update
 
 # docker-engine
 sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572c52609d
