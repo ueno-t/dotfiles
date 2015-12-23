@@ -2,7 +2,7 @@
 export LANG=ja_JP.UTF-8
 
 # binding
-bindkey -v
+bindkey -e
 
 # setting
 setopt no_beep

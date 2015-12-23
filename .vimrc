@@ -38,8 +38,8 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-" set autoindent
-" set smartindent
+set noautoindent
+set nosmartindent
 
 " os setting
 " set iminsert=2
@@ -58,14 +58,17 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Shougo/vimfiler'
 
-  "
+  " lightline
   NeoBundle 'itchyny/lightline.vim'
 
   " color schema
-  NeoBundle 'ujihisa/unite-colorscheme'
   NeoBundle 'altercation/vim-colors-solarized'
-  NeoBundle 'w0ng/vim-hybrid'
 
+  " typescript
+  NeoBundle 'Shougo/vimproc'
+  NeoBundle 'Quramy/tsuquyomi'
+  NeoBundle 'leafgarland/typescript-vim'
+  NeoBundle 'jason0x43/vim-js-indent'
 call neobundle#end()
 
 NeoBundleCheck
@@ -76,4 +79,12 @@ filetype plugin indent on
 set background=dark
 " colorscheme desert
 colorscheme solarized
+
+" remap key
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy
 
