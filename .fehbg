@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --image-bg black --bg-max --no-fehbg '/home/ueno-t/.wallpaper/wolf_1.jpg' 
+feh  --bg-scale '/home/ueno-t/.wallpaper/Playdough_Man_On_Computer.jpg' '/home/ueno-t/.wallpaper/pmanfriend_1152.jpg' '/home/ueno-t/.wallpaper/sayhello2_1152.jpg' '/home/ueno-t/.wallpaper/playdoughman_1152.jpg' 
