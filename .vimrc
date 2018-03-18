@@ -47,38 +47,12 @@ set nosmartindent
 " command line
 set history=2000
 
-" neobundle
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-  " base
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Shougo/vimfiler'
-
-  " lightline
-  NeoBundle 'itchyny/lightline.vim'
-
-  " color schema
-  NeoBundle 'altercation/vim-colors-solarized'
-
-  " typescript
-  NeoBundle 'Shougo/vimproc'
-  NeoBundle 'Quramy/tsuquyomi'
-  NeoBundle 'leafgarland/typescript-vim'
-  NeoBundle 'jason0x43/vim-js-indent'
-call neobundle#end()
-
-NeoBundleCheck
-
 filetype plugin indent on
 
 " color scheme
 set background=dark
-" colorscheme desert
-colorscheme solarized
+colorscheme desert
+" colorscheme solarized
 
 " remap key
 nnoremap あ a
@@ -87,4 +61,38 @@ nnoremap う u
 nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
+
+" dein Scripts
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/home/ueno-t/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/home/ueno-t/.cache/dein')
+  call dein#begin('/home/ueno-t/.cache/dein')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/home/ueno-t/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 

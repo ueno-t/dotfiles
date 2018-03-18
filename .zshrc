@@ -107,13 +107,4 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
-
-
-# tmux
-if [ -z $TMUX ]; then
-  tmux -2 attach || tmux new-session \; source-file ~/.tmux/session
-fi
-
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-export PATH=$HOME/.gobrew/bin:$PATH
-eval "$(gobrew init -)"
+emulate sh -c '. ~/.profile'
