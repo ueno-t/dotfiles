@@ -1,1 +1,1 @@
-runtime autoload/*.vim
+runtime! rc/*.vim
