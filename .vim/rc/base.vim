@@ -6,6 +6,7 @@ set nocompatible
 set number
 set ruler
 set cursorline
+
 " set cursorcolumn
 set laststatus=2
 set cmdheight=2
@@ -43,6 +44,7 @@ set nosmartindent
 
 " os setting
 " set iminsert=2
+set vb t_vb=
 
 " command line
 set history=2000
