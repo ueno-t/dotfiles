@@ -50,7 +50,7 @@ initialize() {
 
   # vim dein
   curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/deinstaller.sh
-  sh ~/deinstaller.sh ~/.cache/dein
+  sh ~/deinstaller.sh ~/.cache
   rm ~/deinstaller.sh
 }
 
