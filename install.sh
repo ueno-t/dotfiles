@@ -24,7 +24,7 @@ EOF
 all() {
   download
   deploy
-  init
+  initialize
 }
 
 download() {
