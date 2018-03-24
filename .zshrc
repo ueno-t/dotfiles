@@ -1,4 +1,5 @@
 # environment
+umask 022
 export LANG=ja_JP.UTF-8
 
 # binding
@@ -106,10 +107,7 @@ case ${OSTYPE} in
         ;;
 esac
 
-# vim:set ft=zsh:
-emulate sh -c '. ~/.profile'
-
-
+# tmux
 if [ -z $TMUX ]; then
   tmux -2 attach || tmux new-session \; source-file ~/.tmux/session
 fi
