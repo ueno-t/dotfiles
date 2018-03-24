@@ -11,8 +11,8 @@ set cursorline
 set laststatus=2
 set cmdheight=2
 set showmatch
-set list
-set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
+" set list
+" set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 set helplang=en
 set t_Co=256
 

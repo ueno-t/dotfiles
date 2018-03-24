@@ -108,3 +108,8 @@ esac
 
 # vim:set ft=zsh:
 emulate sh -c '. ~/.profile'
+
+
+if [ -z $TMUX ]; then
+  tmux -2 attach || tmux new-session \; source-file ~/.tmux/session
+fi
