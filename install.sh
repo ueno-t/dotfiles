@@ -13,10 +13,18 @@ usage () {
 Usage:
   $name [command]
 Commands:
+  all
+  download
   deploy
   init
 EOF
   exit 1
+}
+
+all() {
+  download
+  deploy
+  init
 }
 
 download() {
@@ -58,6 +66,9 @@ command=$1
 [ $# -gt 0 ] && shift
 
 case $command in
+  all)
+    all
+    ;;
   download)
     download
     ;;
