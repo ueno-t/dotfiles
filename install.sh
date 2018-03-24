@@ -3,6 +3,10 @@ set -e
 DOTPATH=~/.dotfiles
 TARBALL="https://github.com/ueno-t/.dotfiles/tarball/master"
 
+has() {
+  type "$1" > /dev/null 2>&1
+}
+
 usage () {
   name=`basename $0`
   cat <<EOF
@@ -17,9 +21,12 @@ EOF
 
 download() {
   mkdir $DOTPATH
-  curl -fsSLo $HOME/dotfiles.tar.gz $TARBALL
-  tar -zxf $HOME/dotfiles.tar.gz --strip-components 1 -C $DOTPATH
-  rm $HOME/dotfiles.tar.gz
+  if has "curl"; then
+    curl -L $TARBALL
+  elif has "wget"; then
+    wget -O - $TARBALL
+  fi | tar xzv
+  mv -f .dotfiles-master $DOTPATH
 }
 
 deploy() {
