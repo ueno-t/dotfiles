@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 DOTPATH=~/.dotfiles
-TARBALL="https://github.com/ueno-t/.dotfiles/archive/master.tar.gz"
+TARBALL="https://github.com/ueno-t/.dotfiles/tarball/master"
 
 has() {
   type "$1" > /dev/null 2>&1
@@ -20,6 +20,7 @@ EOF
 }
 
 download() {
+  mkdir $DOTPATH
   if has "curl"; then
     curl -L $TARBALL
   elif has "wget"; then
