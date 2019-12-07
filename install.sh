@@ -55,11 +55,6 @@ initialize() {
   # base
   sudo apt-get install -y git zsh vim tmux ctags curl
   sudo apt-get install -y make binutils bison gcc build-essential
-
-  # vim dein
-  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/deinstaller.sh
-  sh ~/deinstaller.sh ~/.cache
-  rm ~/deinstaller.sh
 }
 
 command=$1
