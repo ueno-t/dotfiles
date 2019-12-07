@@ -55,6 +55,8 @@ initialize() {
   # base
   sudo apt-get install -y git zsh vim tmux ctags curl
   sudo apt-get install -y make binutils bison gcc build-essential
+  # tpm
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 command=$1
